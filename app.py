@@ -18,7 +18,7 @@ app = Flask(__name__)
 # --- Configuration ---
 CSV_FILE = 'call_analysis.csv'
 # Fix: Use the correct environment variable name
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "xai-YY0QDvcUEl58gcxKg0ujmlRytxebp7VB5hi3EeJO0gsr8me2dQ3iSb2Aco0VSHRPkfIyCFT5npmmgcLb")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "YOUR_API_KEY")
 client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
 
 # --- Improved Sentiment Keywords for Fallback ---
@@ -245,4 +245,5 @@ def test_sentiment():
 if __name__ == '__main__':
     print(f"API Key available: {client is not None}")
     print(f"CSV file: {CSV_FILE}")
+
     app.run(debug=True)
